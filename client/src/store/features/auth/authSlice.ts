@@ -1,4 +1,4 @@
-import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit'
+import {createSlice, createAsyncThunk, PayloadAction, AnyAction} from '@reduxjs/toolkit'
 import {IAuth, IUser, IUserDataLogin, IUserDataRegister} from "../../../types";
 import {loginService, registerService} from "../../services";
 
@@ -34,6 +34,18 @@ export const login = createAsyncThunk<IUser, IUserDataLogin, {rejectValue: strin
     }
 );
 
+const isPending = (action: AnyAction) => {
+    return action.type.endsWith('pending');
+}
+
+const isFulfilled = (action: AnyAction) => {
+    return action.type.endsWith('fulfilled');
+}
+
+const isError = (action: AnyAction) => {
+    return action.type.endsWith('rejected');
+}
+
 const authSlice = createSlice({
     name: 'auth',
     initialState,
@@ -54,33 +66,18 @@ const authSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(register.pending, (state: IAuth, ) => {
+            .addMatcher(isPending, (state: IAuth, ) => {
                 authSlice.actions.reset();
                 state.isLoading = true;
             })
-            .addCase(register.fulfilled, (state, action: PayloadAction<IUser>) => {
+            .addMatcher(isFulfilled, (state, action: PayloadAction<IUser>) => {
                 authSlice.actions.success();
                 state.user = action.payload;
             })
-            .addCase(register.rejected, (state:IAuth, action: PayloadAction<string | undefined>) => {
+            .addMatcher(isError, (state, action: PayloadAction<string>) => {
                 authSlice.actions.reset();
                 state.isError = true;
-                state.message = (typeof action.payload === 'string') ? action.payload : 'Register Error';
-            })
-
-        builder
-            .addCase(login.pending, (state, action) => {
-                authSlice.actions.reset();
-                state.isLoading = true;
-            })
-            .addCase(login.fulfilled, (state, action) => {
-                authSlice.actions.success();
-                state.user = action.payload;
-            })
-            .addCase(login.rejected, (state, action) => {
-                authSlice.actions.reset();
-                state.isError = true;
-                state.message = (typeof action.payload === 'string') ? action.payload : 'Register Error';
+                state.message = action.payload;
             })
     }
 });
