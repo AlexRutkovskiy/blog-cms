@@ -1,0 +1,20 @@
+{
+  "name": "blog-cms",
+  "version": "1.0.0",
+  "description": "Blog cms",
+  "main": "index.js",
+  "scripts": {
+    "client:dev": "",
+    "server:dev": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexRutkovskiy/blog-cms.git"
+  },
+  "author": "Alex R",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexRutkovskiy/blog-cms/issues"
+  },
+  "homepage": "https://github.com/AlexRutkovskiy/blog-cms#readme"
+}
