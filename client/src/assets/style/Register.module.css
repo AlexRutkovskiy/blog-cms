@@ -1,0 +1,59 @@
+@import './Global.module.css';
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #B9B7BD;
+    border-radius: 20px;
+    padding: 40px 20px;
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.rowIcon {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 35px;
+}
+
+.rowManage {
+    margin-top: 20px;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    color: #B9B7BD;
+}
+
+.description {
+    color: #B9B7BD;
+}
+
+.description a {
+    color: #246EB9;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        box-shadow: unset;
+        border: unset;
+        border-radius: unset;
+    }
+    .row {
+        display: block;
+        align-items: unset;
+        gap: unset;
+    }
+}

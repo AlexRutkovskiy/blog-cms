@@ -1,0 +1,49 @@
+
+:root {
+    --defaultButton: #B9B7BD;
+    --primaryButton: #18A558;
+    --negativeButton: #F51720;
+    --colorContent: #ffffff;
+}
+
+.button {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px 25px;
+    border-radius: 5px;
+    background-color: var(--defaultButton);
+    color: var(--colorContent);
+    border: 2px solid var(--defaultButton);
+}
+
+.button:hover {
+    opacity: .8;
+}
+
+.button.primary {
+    background-color: var(--primaryButton) !important;
+    border-color: var(--primaryButton) !important;;
+}
+
+.button.negative {
+    background-color: var(--negativeButton) !important;
+    border-color: var(--negativeButton) !important;
+}
+
+.button.outline {
+    background-color: var(--colorContent) !important;
+    color: var(--defaultButton) !important;
+}
+
+.button.primary.outline {
+    color: var(--primaryButton) !important;
+}
+
+.button.negative.outline {
+    color: var(--negativeButton) !important;
+}
+
+.button.fullWidth {
+    width: 100% !important;
+    max-width: 600px !important;
+}
