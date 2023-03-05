@@ -14,10 +14,12 @@
     box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
 }
 
-.row {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.description {
+    color: #B9B7BD;
+}
+
+.description a {
+    color: #246EB9;
 }
 
 .rowIcon {
@@ -37,23 +39,10 @@
     color: #B9B7BD;
 }
 
-.description {
-    color: #B9B7BD;
-}
-
-.description a {
-    color: #246EB9;
-}
-
 @media screen and (max-width: 600px) {
     .container {
         box-shadow: unset;
         border: unset;
         border-radius: unset;
-    }
-    .row {
-        display: block;
-        align-items: unset;
-        gap: unset;
     }
 }

@@ -5,7 +5,7 @@
 :root {
     --primaryColor: #B9B7BD;
     --secondaryColor: #000000;
-    --error: #970C10
+    --error: #970C10;
 }
 
 .label {

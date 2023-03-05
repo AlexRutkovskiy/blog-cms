@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaUserAlt } from 'react-icons/fa'
 import { Input as InputField, Button } from '../components';
 import {AUTH_FORM_NAMES} from '../utils/constans';
 import styles from '../assets/style/Register.module.css';
+import {ROUTES} from "../routes";
 
 interface IUserDataRegister {
     [AUTH_FORM_NAMES.FIRST_NAME]: string;
@@ -22,8 +24,9 @@ const Register = () => {
         [AUTH_FORM_NAMES.CONFIRM_PASSWORD]: ''
     })
 
-    const handleSubmit = React.useCallback((e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = React.useCallback((e: React.FormEvent) => {
         e.preventDefault();
+
     }, []);
 
     const handleChangeField = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -83,10 +86,15 @@ const Register = () => {
                         onChange={handleChangeField}
                     />
                 </div>
-                <div>
+                <p className={styles.description}>
+                    If you are already registered - <Link to={ROUTES.AUTH.LOGIN}>Login</Link>
+                </p>
+                <div className={styles.rowManage}>
                     <Button
                         title='Register'
-                        onClick={()=>{}}
+                        type='submit'
+                        fullWidth={true}
+                        onClick={handleSubmit}
                     />
                 </div>
             </form>
