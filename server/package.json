@@ -46,6 +46,12 @@
     },
     "_moduleAliases": {
         "@config": "./dist/config",
-        "@routes": "./dist/routes"
+        "@exceptions": "./dist/exceptions/",
+        "@http": "./dist/http/",
+        "@models": "./dist/models/",
+        "@repository": "./dist/repository/",
+        "@routes": "./dist/routes",
+        "@services": "./dist/services/",
+        "@utils": "./dist/utils/"
     }
 }
