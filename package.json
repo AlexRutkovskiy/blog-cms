@@ -4,7 +4,10 @@
   "description": "Simple cms with default theme for blog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npm run lint:server",
+    "lint:server": "cd ./server && npm run lint",
+    "lint:front": "",
+    "lint:admin": "",
     "prepare": "husky"
   },
   "author": "Alex R",
