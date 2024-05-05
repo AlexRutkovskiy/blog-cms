@@ -1,7 +1,6 @@
 import { Router } from 'express'
+import { authRouter } from './auth.js'
 
 export const router = Router()
 
-router.get('/', (req, res) => {
-    res.json({ Ok: true })
-})
+router.use('/auth', authRouter)
