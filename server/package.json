@@ -12,7 +12,8 @@
         "test": "cross-env NODE_ENV=test dotenv -e .env jest",
         "test:watch": "cross-env NODE_ENV=test dotenv -e .env jest --watch",
         "lint": "eslint src/**/*.ts",
-        "lint:fix": "eslint src/**/*.ts --fix"
+        "lint:fix": "eslint src/**/*.ts --fix",
+        "prepare": "husky"
     },
     "author": "Alex R",
     "license": "ISC",

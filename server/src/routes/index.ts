@@ -2,6 +2,6 @@ import { Router } from 'express'
 
 export const router = Router()
 
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
     res.json({ Ok: true })
 })
