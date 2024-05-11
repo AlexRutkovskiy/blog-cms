@@ -11,7 +11,7 @@ import { fileURLToPath } from 'url'
 import { router } from '@routes/index.js'
 import { JSONResponse } from '@http/response/JsonResponse.js'
 import { ApiException } from '@exceptions/ApiException.js'
-import { HTTP_STATUS_CODE } from '@utils/http.js'
+import { HTTP_STATUS_CODE } from '@utils/constans/http.js'
 
 const app: Application = express()
 
@@ -61,7 +61,8 @@ app.use('/v1/api', router)
 
 app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
     const statusCode = error instanceof ApiException ? error?.code : 500
-    return res.json(new JSONResponse(statusCode, error?.message, null))
+    const data = error instanceof ApiException ? error?.data : null
+    return res.json(new JSONResponse(statusCode, error?.message, data))
 })
 
 export { app }

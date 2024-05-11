@@ -1,5 +1,9 @@
+import { IAuthSignIn } from '@utils/types/auth.js'
+
 class UserService {
-    public createUser() {}
+    public createUser(data: IAuthSignIn) {
+        console.log(data)
+    }
 
     public findUserByCredencial() {}
 }
