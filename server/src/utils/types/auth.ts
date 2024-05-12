@@ -1,9 +1,8 @@
-export interface IAuthSignIn {
-    email: string
-    password: string
-}
+import { IUser } from './user.js'
 
-export interface IAuthSignUp extends IAuthSignIn {
-    firstName: string
-    lastName: string
-}
+export type IAuthSignIn = Pick<IUser, 'email' | 'password'>
+
+export type IAuthSignUp = Pick<
+    IUser,
+    'email' | 'password' | 'firstName' | 'lastName'
+>
