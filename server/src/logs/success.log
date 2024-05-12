@@ -1,7 +1,1 @@
 
-2024-05-05T11:19:24.649Z ::1 - GET / HTTP/1.1 304 - - 3.442 ms
-2024-05-11T14:44:49.545Z ::1 - POST /v1/api/auth/sign-in HTTP/1.1 200 11 - 3.959 ms
-2024-05-11T14:45:37.299Z ::1 - POST /v1/api/auth/sign-in HTTP/1.1 200 11 - 6.470 ms
-2024-05-11T14:50:07.844Z ::1 - POST /v1/api/auth/sign-in HTTP/1.1 200 11 - 5.983 ms
-2024-05-11T15:04:03.699Z ::1 - POST /v1/api/auth/sign-in HTTP/1.1 200 11 - 5.652 ms
-2024-05-11T15:10:26.742Z ::1 - POST /v1/api/auth/sign-in HTTP/1.1 200 135 - 4.390 ms
