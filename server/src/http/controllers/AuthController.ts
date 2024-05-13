@@ -3,36 +3,37 @@ import { Request, Response, NextFunction } from 'express'
 import { errorValidation } from '@utils/helpers/errorValidation.js'
 import { ApiException } from '@exceptions/ApiException.js'
 import { userService } from '@services/UserService.js'
-import { IAuthSignIn } from '@utils/types/auth.js'
+import { IAuthSignIn, IAuthSignUp } from '@utils/types/auth.js'
 
 class AuthController {
-    public signIn(req: Request, res: Response, next: NextFunction) {
+    public async signIn(req: Request, res: Response, next: NextFunction) {
         const error = errorValidation(req)
         if (error) {
             return next(ApiException.BadRequest(error))
         }
 
         try {
-            userService.createUser(req.body as IAuthSignIn)
+            const user = await userService.findUserByCredencial(
+                req.body as IAuthSignIn
+            )
+            return res.json({ ...user })
         } catch (e) {
             return next(e)
         }
-
-        return res.json({ ok: true })
     }
 
-    public signUp(req: Request, res: Response, next: NextFunction) {
+    public async signUp(req: Request, res: Response, next: NextFunction) {
         const error = errorValidation(req)
         if (error) {
             return next(ApiException.BadRequest(error))
         }
 
         try {
+            const user = await userService.createUser(req.body as IAuthSignUp)
+            return res.json({ ...user })
         } catch (e) {
             return next(e)
         }
-
-        return res.json({ ok: true })
     }
 
     public logout(req: Request, res: Response) {}

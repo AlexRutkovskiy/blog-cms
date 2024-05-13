@@ -1,12 +1,14 @@
 version: '3.1'
 
 services:
-  mongo:
+  mongodatabase:
     image: mongo
+    container_name: mongoDB
     restart: always
+    command: [--auth]
     environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: develop
+      - MONGO_INITDB_ROOT_USERNAME=userAdmin
+      - MONGO_INITDB_ROOT_PASSWORD=userPassword
     ports:
       - '27017:27017'
     volumes:

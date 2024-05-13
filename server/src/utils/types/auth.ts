@@ -1,8 +1,5 @@
-import { IUser } from './user.js'
+import { IUserLogin, IUserRegister } from './user.js'
 
-export type IAuthSignIn = Pick<IUser, 'email' | 'password'>
+export interface IAuthSignIn extends IUserLogin {}
 
-export type IAuthSignUp = Pick<
-    IUser,
-    'email' | 'password' | 'firstName' | 'lastName'
->
+export interface IAuthSignUp extends IUserRegister {}

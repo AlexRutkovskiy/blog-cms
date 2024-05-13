@@ -7,13 +7,13 @@ class SignUpRequest extends BaseRequest {
             body('firstName', 'Invalid does not Empty').not().isEmpty(),
             body(
                 'firstName',
-                'The minimum password length is 3 characters'
-            ).isLength({ min: 3 }),
+                'The minimum password length is 2 characters'
+            ).isLength({ min: 2 }),
             body('lastName', 'Invalid does not Empty').not().isEmpty(),
             body(
                 'lastName',
-                'The minimum password length is 3 characters'
-            ).isLength({ min: 3 }),
+                'The minimum password length is 2 characters'
+            ).isLength({ min: 2 }),
             body('email', 'Invalid does not Empty').not().isEmpty(),
             body('email', 'Invalid email').isEmail(),
             body(

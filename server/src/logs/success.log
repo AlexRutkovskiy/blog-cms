@@ -1,1 +1,14 @@
 
+2024-05-13T11:47:21.094Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 208 - 5.152 ms
+2024-05-13T11:48:36.671Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 102 - 6.619 ms
+2024-05-13T11:49:52.933Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 102 - 6.711 ms
+2024-05-13T11:50:08.630Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 69 - 11.357 ms
+2024-05-13T11:50:53.990Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 69 - 11.264 ms
+2024-05-13T11:52:11.700Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 69 - 14.587 ms
+2024-05-13T11:55:01.691Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 69 - 13.439 ms
+2024-05-13T11:57:13.828Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 69 - 21.466 ms
+2024-05-13T14:02:58.041Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 69 - 32.745 ms
+2024-05-13T14:15:15.778Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 69 - 42.152 ms
+2024-05-13T14:49:43.010Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 69 - 39.858 ms
+2024-05-13T15:53:54.469Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 119 - 31.864 ms
+2024-05-13T15:55:39.040Z ::1 - POST /v1/api/auth/sign-up HTTP/1.1 200 78 - 20.881 ms
