@@ -13,6 +13,7 @@ export interface IUserRegister extends IUserLogin {
 export interface IUser extends IUserRegister {
     avatar?: string
     uuid: string
+    isConfirmEmail: boolean
     createdAt?: Date
     updatedAt?: Date
 }

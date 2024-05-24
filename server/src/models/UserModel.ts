@@ -10,6 +10,7 @@ const userSchema = new Schema<IUser>(
         password: { type: String, required: true },
         avatar: { type: String, default: '' },
         uuid: { type: String, default: () => v4(), unique: true },
+        isConfirmEmail: { type: Boolean, default: false },
     },
     {
         timestamps: true,

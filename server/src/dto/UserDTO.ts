@@ -6,6 +6,7 @@ class UserDTO {
     public email: string
     public avatar: string
     public uuid: string
+    public isConfirmEmail: boolean
 
     constructor(data: IUserDocument) {
         this.firstName = data.firstName
@@ -13,6 +14,7 @@ class UserDTO {
         this.email = data.email
         this.avatar = data.avatar ?? ''
         this.uuid = data.uuid
+        this.isConfirmEmail = data.isConfirmEmail
     }
 }
 
