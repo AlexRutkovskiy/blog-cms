@@ -1,8 +1,14 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Provider } from "react-redux"
+
+import { store } from "@store/store"
+import { TranslateProvider } from "@context/translateContext";
+import { Layout } from "@pages/Layout"
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <h1>Initialize project</h1>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <TranslateProvider>
+      <Layout />
+    </TranslateProvider>
+  </Provider>,
 )

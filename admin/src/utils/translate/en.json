@@ -1,0 +1,28 @@
+{
+  "auth": {
+    "register": {
+      "title": "Register",
+      "btnRegister": "Register now",
+      "linkToLogin": {
+        "description": "Already have an account?",
+        "label": "Login now"
+      }
+    },
+    "login": {
+      "title": "Login",
+      "btnLogin": "Login Now",
+      "linkToLogin": {
+        "description": "You don't have an account?",
+        "label": "Register now"
+      }
+    }
+  },
+  "fields": {
+    "placeholders": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "password": "Password"
+    }
+  }
+}

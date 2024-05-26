@@ -1,0 +1,42 @@
+@import "../../utils/styles/variables.scss";
+
+.form-title {
+    position: relative;
+    font-size: 26px;
+    margin: 0;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 10%;
+        height: 2px;
+        background-color: $bg-primary;
+    }
+
+    &__wrapper {
+        margin-bottom: 10px;
+    }
+}
+
+.form-btn {
+    &__wrapper {
+        margin: 10px 0;
+    }
+}
+
+.form-link {
+    &,
+    &:hover,
+    &:focus,
+    &:visited {
+        color: $link;
+    }
+    
+    &__wrapper {
+        padding-top: 10px;
+        font-size: 18px;
+        color: $text-color-primary;
+    }
+}
