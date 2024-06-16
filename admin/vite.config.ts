@@ -12,20 +12,12 @@ export default defineConfig({
         replacement: path.resolve(__dirname, path.join("src", "components")),
       },
       {
-        find: "@context",
-        replacement: path.resolve(__dirname, path.join("src", "context")),
-      },
-      {
-        find: "@hooks",
-        replacement: path.resolve(__dirname, path.join("src", "hooks")),
-      },
-      {
         find: "@pages",
         replacement: path.resolve(__dirname, path.join("src", "pages")),
       },
       {
-        find: "@services",
-        replacement: path.resolve(__dirname, path.join("src", "services")),
+        find: "@router",
+        replacement: path.resolve(__dirname, path.join("src", "router")),
       },
       {
         find: "@store",
@@ -34,10 +26,6 @@ export default defineConfig({
       {
         find: "@utils",
         replacement: path.resolve(__dirname, path.join("src", "utils")),
-      },
-      {
-        find: "@views",
-        replacement: path.resolve(__dirname, path.join("src", "views")),
       },
     ],
   },
