@@ -1,0 +1,47 @@
+@import "../../../utils/global/styles/variable.scss";
+$name: "button";
+
+.#{$name} {
+    position: relative;
+    min-height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: $button-primary-color;
+    padding: 5px 25px;
+
+    &--primary {
+        background: $button-primary-bg;
+        
+        &:hover {
+            background: rgba($button-primary-bg, .9);
+        }
+    }
+
+    &--secondary {
+        background: $button-secondary-bg;
+
+        &:hover {
+            background: rgba($button-secondary-bg, .8);
+        }
+    }
+
+    &--negative {
+        background: $button-negative-bg;
+
+        &:hover {
+            background: rgba($button-negative-bg, .8);
+        }
+    }
+
+    &--full {
+        width: 100%;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: inherit;
+    }
+}
