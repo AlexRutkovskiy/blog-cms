@@ -1,0 +1,62 @@
+@import "../../../utils/global/styles/variable.scss";
+$name: "checkbox";
+
+.#{$name} {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 35px;
+    line-height: 25px;
+
+    &__field {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    &__checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: transparent;
+        border: 1px solid $checkbox-border;
+        border-radius: 2px;
+    }
+
+    &__label {
+        font-size: 18px;
+    }
+
+    &:hover &__field ~ &__checkmark {
+        background-color: $checkbox-bg-hover;
+    }
+
+    & &__field:checked ~ &__checkmark {
+        background-color: $checkbox-bg-checked;
+    }
+
+    &__checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    & &__field:checked ~ &__checkmark:after {
+        display: block;
+    }
+
+    & &__checkmark:after {
+        left: 9px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid $checkbox-checked-element;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+    }
+}

@@ -4,15 +4,21 @@
   "description": "Simple cms with default theme for blog",
   "main": "index.js",
   "scripts": {
-    "lint": "npm run lint:server",
+    "lint": "concurrently \"npm run lint:server\"  \"npm run lint:admin\"",
     "lint:server": "cd ./server && npm run lint",
     "lint:front": "",
-    "lint:admin": "",
-    "prepare": "husky"
+    "lint:admin": "cd ./admin && npm run lint",
+    "prepare": "husky",
+    "dev": "concurrently \"npm run server:dev\" \"npm run admin:dev\"",
+    "server:dev": "cd ./server && npm run start:dev",
+    "admin:dev": "cd ./admin && npm run dev"
   },
   "author": "Alex R",
   "license": "ISC",
   "devDependencies": {
     "husky": "^9.0.11"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
   }
 }

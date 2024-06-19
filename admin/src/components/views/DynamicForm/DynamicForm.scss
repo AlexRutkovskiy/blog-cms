@@ -1,0 +1,7 @@
+$name: "dynamic-form";
+
+.#{$name} {
+    &__row:not(:first-of-type) {
+        margin-top: 20px;
+    }
+}
