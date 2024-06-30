@@ -10,8 +10,8 @@ interface IProps {
 export const Auth: FC<IProps> = ({isLoginPage}: IProps) => {
     const handleOnSubmit = useCallback((event: React.SyntheticEvent<HTMLFormElement>) => {
         event.preventDefault()
-        const form = event.currentTarget
-        const data = new FormData(form)
+        // const form = event.currentTarget
+        // const data = new FormData(form)
         
     }, [])
     
