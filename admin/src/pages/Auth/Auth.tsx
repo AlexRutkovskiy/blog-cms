@@ -1,84 +1,25 @@
-import { FC } from "react"
+import { FC, useCallback } from "react"
 import { SignIn } from "./SignIn/SignIn"
 import { SignUp } from "./SignUp/SignUp"
-
-import { FIELD_TYPE } from "@components/views/DynamicForm/types";
+import { fields } from "./fields";
 
 interface IProps {
     isLoginPage?: boolean
 }
 
-const fields = {
-    signIn: [
-        {
-            id: "email",
-            fieldType: FIELD_TYPE.INPUT,
-            placeholder: "Enter email",
-            label: "Email",
-            name: "email"
-        },
-        {
-            id: "password",
-            type: "password",
-            fieldType: FIELD_TYPE.INPUT,
-            placeholder: "Enter password",
-            label: "Password",
-            name: "password"
-        },
-        {
-            id: "submit",
-            fieldType: FIELD_TYPE.BUTTON,
-            label: "Sign In",
-            name: "submit"
-        }
-    ],
-    signUp: [
-        {
-            id: "firstName",
-            fieldType: FIELD_TYPE.INPUT,
-            placeholder: "Enter first name",
-            label: "First name",
-            name: "firstName"
-        },
-        {
-            id: "secondName",
-            fieldType: FIELD_TYPE.INPUT,
-            placeholder: "Enter second name",
-            label: "Second name",
-            name: "secondName"
-        },
-        {
-            id: "email",
-            fieldType: FIELD_TYPE.INPUT,
-            placeholder: "Enter email",
-            label: "Email",
-            name: "email"
-        },
-        {
-            id: "password",
-            type: "password",
-            fieldType: FIELD_TYPE.INPUT,
-            placeholder: "Enter password",
-            label: "Password",
-            name: "password"
-        },
-        {
-            id: "submit",
-            fieldType: FIELD_TYPE.BUTTON,
-            label: "Sign Up",
-            name: "submit",
-            view: "primary"
-        }
-    ]
-}
-
-
 export const Auth: FC<IProps> = ({isLoginPage}: IProps) => {
+    const handleOnSubmit = useCallback((event: React.SyntheticEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        const form = event.currentTarget
+        const data = new FormData(form)
+        
+    }, [])
+    
     if(isLoginPage) {
         return (
             <SignIn 
                 fields={fields.signIn} 
-                onSubmit={()=>{}} 
+                onSubmit={handleOnSubmit}
             />
         )
     }
@@ -86,7 +27,7 @@ export const Auth: FC<IProps> = ({isLoginPage}: IProps) => {
     return (
         <SignUp 
             fields={fields.signUp} 
-            onSubmit={()=>{}} 
+            onSubmit={handleOnSubmit}
         />
     )
 }

@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, SyntheticEvent } from "react"
 
 import { Input } from "@components/UI/Input/Input"
 import { Checkbox } from "@components/UI/Checkbox/Checkbox";
@@ -9,7 +9,7 @@ import { Button } from "@components/UI/Button/Button";
 
 interface IProps {
     fields: IPropsDymanicComponents[];
-    onSubmit: ()=> void;
+    onSubmit: (event: SyntheticEvent<HTMLFormElement>)=> void;
 }
 
 const mainClass = "dynamic-form"

@@ -22,8 +22,10 @@ export const AuthLayout = () => {
         <>
             <main className={mainClass}>
                 <div className={`${mainClass}__wrapper`}>
-                    <div className={`${mainClass}__container`}>
-                        <Outlet />
+                    <div className={`${mainClass}__scroll`}>
+                        <div className={`${mainClass}__container`}>
+                            <Outlet />
+                        </div>
                     </div>
                 </div>
             </main>

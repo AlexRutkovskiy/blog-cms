@@ -36,7 +36,7 @@ class AuthController {
 
             AuthController.addTokensToCookies(res, tokens)
 
-            return res.json({ ...user })
+            return res.json({ user: user, token: tokens.accessToken })
         } catch (e) {
             return next(e)
         }
@@ -56,7 +56,7 @@ class AuthController {
 
             AuthController.addTokensToCookies(res, tokens)
 
-            return res.json({ ...user })
+            return res.json({ user: user, token: tokens.accessToken })
         } catch (e) {
             return next(e)
         }
@@ -72,7 +72,6 @@ class AuthController {
             await tokenSrvice.deleteToken(payload.uuid)
 
             res.clearCookie(VARIABLES.COOKIE.REFRESH_TOKEN)
-            res.clearCookie(VARIABLES.COOKIE.ACCESS_TOKEN)
 
             return res.json({ ok: true })
         } catch (e) {
@@ -85,10 +84,6 @@ class AuthController {
             httpOnly: true,
             maxAge: 1000 * 60 * 15,
             path: config.AUTH.JWT_URL_REFRESH_TOKEN,
-        })
-        res.cookie(VARIABLES.COOKIE.ACCESS_TOKEN, tokens.accessToken, {
-            httpOnly: true,
-            maxAge: 1000 * 60 * 15,
         })
     }
 }

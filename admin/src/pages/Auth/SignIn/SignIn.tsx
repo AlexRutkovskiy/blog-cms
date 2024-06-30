@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { FC, SyntheticEvent } from "react"
 import { Link } from "react-router-dom"
 
 import { DynamicForm } from "@components/views/DynamicForm/DynamicForm"
@@ -10,7 +10,7 @@ import type { IPropsDymanicComponents } from "@components/views/DynamicForm/type
 
 interface IProps {
     fields: IPropsDymanicComponents[];
-    onSubmit: () => void;
+    onSubmit: (event: SyntheticEvent<HTMLFormElement>) => void;
 }
 
 const mainClass = "sign-in"
